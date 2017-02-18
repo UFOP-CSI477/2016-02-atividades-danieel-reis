@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <title>Calcula IMC</title>
+
+    <script>
+      {
+        function calcularIMC() {
+          var x = parseFloat(document.calc.peso.value);
+          var y = parseFloat(document.calc.altura.value);
+
+          if(document.calc.peso.value.length == 0) {
+            window.alert("Informe o peso!");
+            document.calc.peso.focus();
+            return ;
+          } else if(document.calc.altura.value.length == 0) {
+            window.alert("Informe a altura!");
+            document.calc.altura.focus();
+            return;
+          }
+          var z = x / (y*y);
+          document.calc.imc.value = z;
+
+          if(parseInt(document.calc.imc.value) <= 18.5) {
+            window.alert("Abaixo do peso!");
+            return ;
+          } else if(parseInt(document.calc.imc.value) >= 18.6 && parseInt(document.calc.imc.value) <= 24.9) {
+            window.alert("Peso ideal (Parabéns)!");
+            return ;
+          } else if(parseInt(document.calc.imc.value) >= 25 && parseInt(document.calc.imc.value) <= 29.9) {
+            window.alert("Levemente acima do peso!");
+            return ;
+          } else if(parseInt(document.calc.imc.value) >= 30 && parseInt(document.calc.imc.value) <= 34.9) {
+            window.alert("Obesidade grau I!");
+            return ;
+          } else if(parseInt(document.calc.imc.value) >= 35 && parseInt(document.calc.imc.value) <= 39.9) {
+            window.alert("Obesidade grau II(Severa)!");
+            return ;
+          } else if(parseInt(document.calc.imc.value) >= 40) {
+            window.alert("Obesidade grau III (Mórbida)!");
+            return ;
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form name="calc" action="#">
+      Peso: <input type="text" name="peso"><br>
+      Altura: <input type="text" name="altura"><br>
+      IMC: <input type="text" name="imc"><br>
+
+      <button type="button" onclick="calcularIMC()">Calcular</button>
+    </form>
+  </body>
+</html>

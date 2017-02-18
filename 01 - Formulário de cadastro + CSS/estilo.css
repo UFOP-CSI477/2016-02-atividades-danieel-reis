@@ -1,0 +1,74 @@
+body {
+	background: #000;
+	url(imagens/minhaimagem.gif);
+}
+
+h2 {
+	color: #fc0;
+	text-align: center;
+	font: italic 9pt Verdana, Sans-serif;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #4CAF50;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+h3 {
+	color: #f00;
+}
+
+p {
+  font-family]: tahoma,arial;
+  background-color: #4592de;
+  margin-left: 15px;
+	padding:1.5em;
+}
+
+p.maior {
+  color: #C6C6C6;
+  text-align: center;
+}
+
+.generica {
+  background-color: red;
+}
+
+div.estatico {
+  position: static;
+  border: 5px solid #56addf;
+}
+
+div.relativo{
+  position: relative;
+  left: 50px;
+  top: 10px;
+  border: 5px solid #56addf;
+}
+
+div.fixo{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px
+  border: 5px solid #56addf;
+}
+
+div.absoluto{
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  width: 200px;
+  border: 5px solid #56addf;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <title>Validação cadastro JavaScript</title>
+    <script>
+
+      function validar(){
+        if(document.cadastro.nome.value == ""){
+          window.alert("Nome inválido!");
+          return;
+        }
+        if(document.cadastro.datanasc.value == ""){
+          window.alert("Data de nascimento inválida!");
+          document.cadastro.datanasc.focus();
+          return;
+        }
+        if(document.cadastro.sexo.value == ""){
+          window.alert("Sexo inválido!");
+          document.sexo.nome.focus();
+          return;
+        }
+        if(document.cadastro.curso.value == ""){
+          window.alert("Curso inválido!");
+          document.cadastro.curso.focus();
+          return;
+        }
+        if(document.cadastro.senha1.value == ""){
+          window.alert("Senha inválida!");
+          document.cadastro.senha1.focus();
+          return;
+        }
+        if(document.cadastro.senha2.value == ""){
+          window.alert("Confirmação de senha inválida!");
+          document.cadastro.senha2.focus();
+          return;
+        }
+
+        if(document.cadastro.senha1.value != document.cadastro.senha2.value){
+          window.alert("Erro. Senhas diferentes!");
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>Cadastro</h1>
+    <form name="cadastro" action="cadastro.php" method="post" class="form-horizontal">
+        <label for="nome" class="control-label col-sm-2">Nome:</label>
+        <input type="text" class="form-control" name="nome"><br>
+        <label for="datanasc" class="control-label col-sm-2">Data de nascimento:</label>
+        <input type="Date" class="form-control" name="datanasc"><br>
+        <label for="sexo" class="control-label col-sm-2">Sexo:</label>
+        <input type="text" class="form-control" name="sexo"><br>
+        <label for="curso" class="control-label col-sm-2">Curso:</label>
+        <input type="text" class="form-control" name="curso"><br>
+        <label for="senha1" class="control-label col-sm-2" style="width = 200px">Senha:</label>
+        <input type="password" class="form-control" name="senha1"><br>
+        <label for="senha2" class="control-label col-sm-2" style="width = 200px">Digite a senha novamente:</label>
+        <input type="password" class="form-control" name="senha2">
+
+        <input type="button" onclick="validar()" value="Cadastrar" style="position: center"><br>
+    </form>
+  </body>
+</html>
