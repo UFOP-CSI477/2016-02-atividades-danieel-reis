@@ -1,0 +1,45 @@
+TERMINAL:
+    mysql -u root -p
+
+TERMINAL MYSQL:
+    CREATE DATABASE provas;
+    GRANT ALL ON provas.* TO sisprovas@localhost IDENTIFIED BY '123456';
+
+CONFIGURATION DATABASE LARAVEL (FILE: .env)
+    ALTER DB_DATABASE, DB_USERNAME, DB_PASSWORD (LINES 10,11,12)
+
+CREATE TABLES
+    CREATE TABLE users(
+      id INT(10) NOT NULL AUTO_INCREMENT,
+      name VARCHAR(191) NOT NULL,
+      email VARCHAR(191) NOT NULL,
+      password VARCHAR(191) NOT NULL,
+      type SMALLINT(6) NOT NULL,
+      remember_token VARCHAR(100),
+      created_at TIMESTAMP,
+      updated_at TIMESTAMP,
+      PRIMARY KEY(id)
+    );
+
+    CREATE TABLE eventos(
+      id INT(10) NOT NULL AUTO_INCREMENT,
+      nome VARCHAR(60) NOT NULL,
+      preco DECIMAL(10,2) NOT NULL,
+      data DATETIME NOT NULL,
+      created_at TIMESTAMP,
+      updated_at TIMESTAMP,
+      PRIMARY KEY(id)
+    );
+
+    CREATE TABLE registros(
+      id INT(10) NOT NULL AUTO_INCREMENT,
+      user_id INT(10) NOT NULL,
+      evento_id INT(10) NOT NULL,
+      data DATETIME NOT NULL,
+      pago BIT(1) NOT NULL,
+      created_at TIMESTAMP,
+      updated_at TIMESTAMP,
+      PRIMARY KEY(id),
+      FOREIGN KEY (user_id) REFERENCES users(id),
+      FOREIGN KEY (evento_id) REFERENCES eventos(id)
+    );
