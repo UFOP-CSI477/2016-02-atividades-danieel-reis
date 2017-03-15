@@ -36,7 +36,7 @@ CREATE TABLES
       user_id INT(10) NOT NULL,
       evento_id INT(10) NOT NULL,
       data DATETIME NOT NULL,
-      pago BIT(1) NOT NULL,
+      pago INT(1) NOT NULL,
       created_at TIMESTAMP,
       updated_at TIMESTAMP,
       PRIMARY KEY(id),
